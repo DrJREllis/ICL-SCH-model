@@ -1,0 +1,8 @@
+Python version of the ICL SCH/STH model
+
+Model can be run from sch_run.py and the model outputs plotted in Generate_results.ipynb using a jupyter notebook.
+
+Files containing functions to run the model are contained within the sch_simulation folder. 
+Within the sch_simulation folder there is a data folder which contains parameter files and demographies to be used in the model.
+
+Model outputs are saved in the outputs folder.
