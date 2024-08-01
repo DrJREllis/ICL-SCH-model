@@ -1,0 +1,9 @@
+R version of the ICL SCH/STH model
+
+Model can be run from run_SCH.R and the model outputs plotted in Simulations_analysis.R 
+
+Other files in the main folder containing functions to run the model.
+
+The data folder  contains parameter files and demographies to be used in the model.
+
+Model outputs are saved in the outputs folder.
