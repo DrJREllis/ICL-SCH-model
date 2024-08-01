@@ -1,0 +1,41 @@
+#### Mansoni parameter values. 
+
+### Model running parameters.
+repNum	50		Number of repetitions
+nYears	71		Number of years to run
+nHosts	500		Size of definitive host population (N)
+outputEvents	50 51.05 55 60 70	output events. 
+
+
+### Social structure
+contactAgeBreaks	0 5 10 16 80		Contact age group breaks (minus sign necessary to include zero age) anderson et al 2016 chp Matithini
+betaValues	0.01 1.2 1 0.02				Relative contact rates (Beta) anderson et al 2016 chp Matithini#kk infection rates, SAC hve the highest infection rate
+#rhoValues	1 1 1 1				Rho, contribution to the reservoir by contact age group. 
+rhoValues	0.01 1.2 1 0.02				Rho, contribution to the reservoir by contact age group. #KK this needs to be the same as beta
+
+### Epidemiological parameters. 
+k	0.24			Shape parameter of assumed negative binomial distribution of worms amongst host (k). THIS VALUE PLUCKED OUT OF THE AIR. -anderson et al 2016 chp
+lambda	0.14		Eggs per gram (lambda) [Value from Chan = 7.0] ### 0.14 value from de Vlas/Cheever. 
+R0	1.30485			Basic reproductive number (R0) lower setting  ## 1.6687 higher setting
+ReservoirDecayRate	5	Reservoir decay rate (decay rate of eggs in the environment)
+sigma	0.25		Worm death rate (sigma) i.e. 1/worm_life_span, same for all development stages
+gamma	0.0007	Exponential density dependence of parasite adult stage (gamma) This value probably comes from Cheever. -anderson et al 2016 chp
+
+### Sexual reproduction styles. 
+reproFuncName	epgMonog	## name of function for reproduction (a string).  [Deterministic] ## epgPerPerson   epgFertility	epgMonog
+StochSR	TRUE		## Turn SR on or off in the stochastic model. 	[Stochastic]  ## FALSE
+
+## Treatment parameters. 
+treatmentBreaks	0 2 5 15 80		Minimum age of each treatment group (minus sign necessary to include zero age): Infants; Pre-SAC; SAC; Adults #KK setting the same age breaks as previously
+coverage	0 0 0.75 0		Coverages: Infants; Pre-SAC; SAC; Adults #KK we are treating 75% of SAC group only
+drugEff	0.86					Drug efficacy
+treatStart	100.05				Treatment year start; Treatment year end; Frequency of treatment by year. ADDED A BIT TO ENSURE OUTPUT FIRST. #KK we run the modelfor 100 years without treatment and then start treatment after that.
+nRounds	7					Number of treatment rounds. 
+treatInterval	1			interval between treatments in years. #KK we are treating once a year for 7 years
+
+## Output age classes. 
+outputBreaks	0 2 5 15 80		## What are the output age classes? #KK see how many 0-2 are infected, 2-5 are infected etc after treatment
+
+## High worm burden.  DUMMY VALUES DUMMY VALUES DUMMY VALUES DUMMY VALUES DUMMY VALUES 
+highBurdenBreaks	0 5 10 100	## Three categories here. 
+highBurdenValues	10 15 20	## Corresponding values. #KK the burden vlues stay fixed. They are from WHO definition of what high burden is.

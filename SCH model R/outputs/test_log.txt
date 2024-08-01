@@ -1,0 +1,17 @@
+Log file is open!
+Parameter file found:  data/Haematobium.txt 
+Setup complete after  0.61  secs.
+Setting up parallel stuff.
+Starting parallel stuff.
+Rep  1  finished.
+Rep  2  finished.
+Rep  3  finished.
+Rep  4  finished.
+Rep  5  finished.
+Rep  6  finished.
+Rep  7  finished.
+Rep  8  finished.
+Rep  9  finished.
+Rep  10  finished.
+Total elapsed time =  907.99 
+Log file closing...

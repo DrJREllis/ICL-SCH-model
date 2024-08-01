@@ -1,0 +1,69 @@
+#### Mansoni parameter values.  Studies of the Transmission Dynamics, Mathematical Model Development and the Control of Schistosome Parasites by Mass Drug Administration in Human Communities
+
+### Model running parameters.
+repNum	50		Number of repetitions
+nYears	30		Number of years to run
+nHosts	500		Size of definitive host population (N)
+outputEvents	5 10 15 20 25 30 35 40 45 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 75 80 	output events. 
+
+### Social structure
+contactAgeBreaks	0 5 10 16 80		Contact age group breaks (minus sign necessary to include zero age) anderson et al 2016 chp Iietune
+betaValues	0.01 1.2 1 0.02				Relative contact rates (Beta) anderson et al 2016 chp Iietune
+rhoValues	0.01 1.2 1 0.02				Rho, contribution to the reservoir by contact age group. 
+
+### Epidemiological parameters. 
+k	0.24
+lambda	0.34		Eggs per gram (lambda) [Value from Chan = 7.0] ### 0.14 value from de Vlas/Cheever. 
+R0	1.5			Basic reproductive number (R0)   ## 2.85
+ReservoirDecayRate	5	Reservoir decay rate (decay rate of eggs in the environment)
+sigma	0.1754386	Worm death rate (sigma) i.e. 1/worm_life_span, same for all development stages
+gamma	0.0007	Exponential density dependence of parasite adult stage (gamma) This value probably comes from Cheever.-anderson et al 2016 chp 
+k_epg	0.87		Shape parameter of negative binomial for distribution of eggs
+
+### Sexual reproduction styles. 
+reproFuncName	epgMonog	## name of function for reproduction (a string).  [Deterministic] ## epgPerPerson   epgFertility	epgMonog
+StochSR	TRUE		## Turn SR on or off in the stochastic model. 	[Stochastic]  ## FALSE
+
+## Treatment parameters. 
+treatmentBreaks	0 2 5 15 80		Minimum age of each treatment group (minus sign necessary to include zero age): Infants; Pre-SAC; SAC; Adults
+coverage	0 0 0.75 0	            Coverages: Infants; Pre-SAC; SAC; Adults
+adherenceSetting	systematic	Type of adherence, systematic or betabinomial
+propNeverCompliers	0				Proportion of the population systematically never treated
+rhoAdherence	0.3					rho parameter that determines adherence in betabinomial model
+drugEff	0.863					Drug efficacy
+treatStart	1				Treatment year start; Treatment year end; Frequency of treatment by year. ADDED A BIT TO ENSURE OUTPUT FIRST. 
+nRounds	100					Number of treatment rounds. 
+treatInterval	1			interval between treatments in years. 
+treatInterval1	1
+treatInterval2	1
+treatStart1	50.05	
+treatStart2	501
+nRounds1	50
+nRounds2	1
+coverage1	0 0 0.75 0
+coverage2	0 0 0.75 0
+## Output age classes. 
+outputBreaks	0 2 5 15 80		## What are the output age classes? 
+
+## Output age classes. 
+outputBreaks	0 1 5 10 23 39 59 90		## What are the output age classes? 
+
+## High worm burden.  DUMMY VALUES DUMMY VALUES DUMMY VALUES DUMMY VALUES DUMMY VALUES 
+burdenThreshold	16
+highBurdenBreaks	0 5 10 100	## Three categories here. 
+highBurdenValues	10 15 20	## Corresponding values. 
+
+
+##vaccine parameter
+v1sigma	1 5.7	impact of vaccine on worm death rate JT. Assume worm death rate is v1*sigma. JET KK 1 2 usually and 1 1 for worms over time
+v2lambda	1 0	impact of vaccine on eggs per gram  JT Fraction of eggs produced when vaccinated. JET
+v3betaValues	1 0	impact of vaccine on contact rates  JT. Assume contact rate under vaccination is times v3. JET 
+VaccTreatmentBreaks	1 1.9		age range of vaccinated group.
+VaccCoverage	0		Vaccine coverage of the age groups JT
+vaccDecayRate	0 0.05			vacc decay rate. rate of vaccine decay = 1/duration of vaccine  JT A vector with value 0 in state 1 and the vacc decay rate for state 2. JET.
+VaccTreatStart	100				##Vaccine administration year start KK 
+nRoundsVacc	0					##number of vaccine rounds KK 
+treatIntervalVacc	1			##KK 
+## Adherence
+adherenceSetting	random		## which adherence setting to use. Legal values are currently "random", "semi-systematic" or "systematic".
+propNeverCompliers	0.25	## The proportion of the population who never comply. Note if this is non-zero, the coverages will still be applied *as if to the whole population*. So the coverages above should be adjusted in this case; adjusted cov = cov/(1-propNeverCompliers).
